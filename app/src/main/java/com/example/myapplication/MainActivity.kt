@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,19 +14,26 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.myapplication.model.UserDataModel
+import com.example.myapplication.screens.AppRoot
+import com.example.myapplication.screens.FirstScreen
+import com.example.myapplication.screens.SecondScreen
 import com.example.myapplication.ui.BoxSample
 import com.example.myapplication.ui.Greeting
 import com.example.myapplication.ui.GuessNumberScreen
 import com.example.myapplication.ui.UserCard
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 //        doFirstHomework()
 
+        //ClassWork:
 //        val userDataSample = UserDataModel(
 //            imageUrl = "https://avatars.mds.yandex.net/i?id=65aeedad98c91159cf920bf8740c520fa2b60467-16490900-images-thumbs&n=13",
 //            userName = "Android",
@@ -34,9 +42,9 @@ class MainActivity : AppCompatActivity() {
 
 
         setContent {
-            GuessNumberScreen()
+            AppRoot()
 
-
+//            GuessNumberScreen()
 //            UserCard(userData = userDataSample)
         }
     }
